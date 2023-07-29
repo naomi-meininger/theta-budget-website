@@ -37,8 +37,15 @@ def scrapeData(budget_request) :
         submit[0].click()
         time.sleep(3)
 
+
         index = -4
         budget_information = driver.find_elements(By.CLASS_NAME, "alignRight")
+
+        temp_index = 0
+        for b in budget_information: 
+                print("budget: ", b, "index: ", temp_index)
+                temp_index = temp_index + 1
+        
         for row in range(3, 34) :
               path = '//*[@id="ctl00_cphBody_aphBudgetVarianceGrid_tblBudgetVariance"]/tbody/tr[' + str(row) + ']/td[1]'
               label = driver.find_element(By.XPATH, path)
