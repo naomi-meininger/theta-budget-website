@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, render_template, request
 import scraping
+import os
 app = Flask(__name__)
 
 @app.route('/')
