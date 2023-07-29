@@ -50,40 +50,40 @@ def scrapeData(budget_request) :
         index = 32
         for row in range(12,15) :
              path = '//*[@id="ctl00_cphBody_aphBudgetVarianceGrid_tblBudgetVariance"]/tbody/tr[' + str(row) + ']/td[1]'
-              label = driver.find_element(By.XPATH, path)
-              temp = label.text.split(" ")
-              temp.remove(temp[0])
-              listToStr = ' '.join([str(elem) for elem in temp])
-              if (listToStr == budget_request) :
+             label = driver.find_element(By.XPATH, path)
+             temp = label.text.split(" ")
+             temp.remove(temp[0])
+             listToStr = ' '.join([str(elem) for elem in temp])
+             if (listToStr == budget_request) :
                 spent = budget_information[index].text
                 budget = budget_information[index + 1].text
                 return [listToStr, budget, spent]
-              index = index + 4 
+             index = index + 4 
 
         for row in range(18,23) :
-              path = '//*[@id="ctl00_cphBody_aphBudgetVarianceGrid_tblBudgetVariance"]/tbody/tr[' + str(row) + ']/td[1]'
-              label = driver.find_element(By.XPATH, path)
-              temp = label.text.split(" ")
-              temp.remove(temp[0])
-              listToStr = ' '.join([str(elem) for elem in temp])
-              if (listToStr == budget_request) :
+             path = '//*[@id="ctl00_cphBody_aphBudgetVarianceGrid_tblBudgetVariance"]/tbody/tr[' + str(row) + ']/td[1]'
+             label = driver.find_element(By.XPATH, path)
+             temp = label.text.split(" ")
+             temp.remove(temp[0])
+             listToStr = ' '.join([str(elem) for elem in temp])
+             if (listToStr == budget_request) :
                 spent = budget_information[index].text
                 budget = budget_information[index + 1].text
                 return [listToStr, budget, spent]
-              index = index + 4 
+             index = index + 4 
 
 
         for row in range(26,34) :
-              path = '//*[@id="ctl00_cphBody_aphBudgetVarianceGrid_tblBudgetVariance"]/tbody/tr[' + str(row) + ']/td[1]'
-              label = driver.find_element(By.XPATH, path)
-              temp = label.text.split(" ")
-              temp.remove(temp[0])
-              listToStr = ' '.join([str(elem) for elem in temp])
-              if (listToStr == budget_request) :
+             path = '//*[@id="ctl00_cphBody_aphBudgetVarianceGrid_tblBudgetVariance"]/tbody/tr[' + str(row) + ']/td[1]'
+             label = driver.find_element(By.XPATH, path)
+             temp = label.text.split(" ")
+             temp.remove(temp[0])
+             listToStr = ' '.join([str(elem) for elem in temp])
+             if (listToStr == budget_request) :
                 spent = budget_information[index].text
                 budget = budget_information[index + 1].text
                 return [listToStr, budget, spent]
-              index = index + 4 
+             index = index + 4 
                 
 
 def login(driver) :
