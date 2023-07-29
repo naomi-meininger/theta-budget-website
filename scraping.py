@@ -2,18 +2,25 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import chromedriver_autoinstaller
+from webdriver_manager.chrome import ChromeDriverManager
+
 
 
 
 def scrapeData(budget_request) :
-    
+        options = webdriver.ChromeOptions()
+
         url = "https://www.billhighway.com/aph/forChapters/v2/login.aspx?logoff=timeout"
         # options= webdriver.ChromeOptions()
-        # options.add_argument("headless")
+        options.add_argument("headless")
+        options.add_argument("window-size=1920x1480")
+        options.add_argument("disable-dev-shm-usage")
 
         chromedriver_autoinstaller.install()  
-        driver  = webdriver.Chrome()
-    
+        driver  = webdriver.Chrome(
+    chrome_options=options, executable_path=ChromeDriverManager().install()
+)
+        # driver  = webdriver.Chrome(options=options)
         driver.get(url)
 
         login(driver)
