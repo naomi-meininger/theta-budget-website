@@ -2,3 +2,4 @@ flask
 selenium
 Jinja2
 chromedriver_autoinstaller
+webdriver-manager
