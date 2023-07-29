@@ -18,7 +18,7 @@
     <h3>Search for Different Budget Requests using the search button below</h3>
     <form id="search-form">
         <label for="dropdown" >Request:</label>
-        <select name="request" id="dropdown">
+        <select name="request" id="dropdown" value="">
             <option value="Vice+President+External+Affairs">Vice President External Affairs</option>
             <option value="Human+Resources+Director">Human Resources Director</option>
             <option value="Senior+Service">Senior Service</option>
@@ -59,6 +59,8 @@
         document.getElementById("dropdown").onchange = function() {
             // Get the selected value from the dropdown
             const selectedValue = this.value;
+           let drop = document.getElementById("dropdown");
+           drop.setAttribute("value", selectedValue);
 
             // Display the selected value in the result div
         //     document.getElementById("input-box").innerText = "Selected value: " + selectedValue;
