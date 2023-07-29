@@ -1,6 +1,8 @@
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+import chromedriver_autoinstaller
+
 
 
 def scrapeData(budget_request) :
@@ -8,7 +10,10 @@ def scrapeData(budget_request) :
         url = "https://www.billhighway.com/aph/forChapters/v2/login.aspx?logoff=timeout"
         # options= webdriver.ChromeOptions()
         # options.add_argument("headless")
+
+        chromedriver_autoinstaller.install()  
         driver  = webdriver.Chrome()
+    
         driver.get(url)
 
         login(driver)
