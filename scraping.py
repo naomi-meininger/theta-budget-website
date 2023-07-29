@@ -37,7 +37,7 @@ def scrapeData(budget_request) :
         submit[0].click()
         time.sleep(3)
 
-        index = -12
+        index = -20
         budget_information = driver.find_elements(By.CLASS_NAME, "alignRight")
         for row in range(3, 34) :
               path = '//*[@id="ctl00_cphBody_aphBudgetVarianceGrid_tblBudgetVariance"]/tbody/tr[' + str(row) + ']/td[1]'
