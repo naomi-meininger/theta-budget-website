@@ -1,1 +1,1 @@
-web: python driver.py
+web: python3 driver.py
