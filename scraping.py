@@ -43,7 +43,7 @@ def scrapeData(budget_request) :
 
         temp_index = 0
         for b in budget_information: 
-                print("budget: ", b, "index: ", temp_index)
+                print("budget: ", b.text, "index: ", temp_index)
                 temp_index = temp_index + 1
         
         for row in range(3, 34) :
