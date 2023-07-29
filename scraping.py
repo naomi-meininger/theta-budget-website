@@ -60,6 +60,7 @@ def scrapeData(budget_request) :
                 return [listToStr, budget, spent]
              index = index + 4 
 
+        index = index + 4
         for row in range(18,23) :
              path = '//*[@id="ctl00_cphBody_aphBudgetVarianceGrid_tblBudgetVariance"]/tbody/tr[' + str(row) + ']/td[1]'
              label = driver.find_element(By.XPATH, path)
@@ -72,7 +73,7 @@ def scrapeData(budget_request) :
                 return [listToStr, budget, spent]
              index = index + 4 
 
-
+        index = index + 4
         for row in range(26,34) :
              path = '//*[@id="ctl00_cphBody_aphBudgetVarianceGrid_tblBudgetVariance"]/tbody/tr[' + str(row) + ']/td[1]'
              label = driver.find_element(By.XPATH, path)
