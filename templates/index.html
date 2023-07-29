@@ -49,9 +49,12 @@
                 </tr>
         </table>
     </div>
-
-       <img src="{{ url_for('static', filename='images-and-style/thetagirls.png') }}" alt="Theta Sister Circa 2022" width="550" height="450">
-       <img src="{{ url_for('static', filename='images-and-style/theta2.jpg') }}" alt="Theta Sister Circa 2022" width="570" height="450">
+       <br>
+       <div class=image-container>
+               <img src="{{ url_for('static', filename='images-and-style/thetagirls.png') }}" alt="Theta Sister Circa 2022" width="550" height="450">
+              <img src="{{ url_for('static', filename='images-and-style/theta2.jpg') }}" alt="Theta Sister Circa 2022" width="570" height="450">
+       </div>
+      
 
 
     <script>
@@ -61,9 +64,6 @@
             const selectedValue = this.value;
            let drop = document.getElementById("dropdown");
            drop.setAttribute("value", selectedValue);
-
-            // Display the selected value in the result div
-        //     document.getElementById("input-box").innerText = "Selected value: " + selectedValue;
         };
         let isLoading = false;
         $(document).ready(function () {
@@ -141,6 +141,11 @@
         }
     </script>
      <style>
+            .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
         header {
 background-color: black;
 
