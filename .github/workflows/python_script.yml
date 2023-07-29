@@ -13,16 +13,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          node-version: '16.x'
 
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '16.x' # Use the appropriate Python version you want to use
+          python-version: '3.0' # Use the appropriate Python version you want to use, e.g., '3.x', '3.7', '3.8', etc.
 
-#       - name: Install dependencies
-#         run: pip install -r requirements.txt # Add this line if you have any Python dependencies
+      # - name: Install dependencies
+      #   run: pip install -r requirements.txt # Add this line if you have any Python dependencies
 
       - name: Run Python script
-        run: python driver.py # Replace 'your_python_file.py' with your actual Python file name
+        run: python driver.py # Replace 'driver.py' with your actual Python file name
