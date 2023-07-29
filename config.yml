@@ -1,0 +1,3 @@
+# config.yml
+port: 8000
+directory: .
