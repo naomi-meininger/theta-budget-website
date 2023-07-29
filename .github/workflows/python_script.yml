@@ -19,8 +19,8 @@ jobs:
         with:
           python-version: '3.x' # Use the appropriate Python version you want to use
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt # Add this line if you have any Python dependencies
+#       - name: Install dependencies
+#         run: pip install -r requirements.txt # Add this line if you have any Python dependencies
 
       - name: Run Python script
         run: python driver.py # Replace 'your_python_file.py' with your actual Python file name
