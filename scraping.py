@@ -6,9 +6,9 @@ from selenium.webdriver.common.by import By
 def scrapeData(budget_request) :
     
         url = "https://www.billhighway.com/aph/forChapters/v2/login.aspx?logoff=timeout"
-        options= webdriver.ChromeOptions()
+        # options= webdriver.ChromeOptions()
         # options.add_argument("headless")
-        driver  = webdriver.Chrome(options=options)
+        driver  = webdriver.Chrome()
         driver.get(url)
 
         login(driver)
