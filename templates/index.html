@@ -68,12 +68,14 @@
         let isLoading = false;
         $(document).ready(function () {
             $('#search-form').on('submit', function (event) {
-                
+                console.log("Line 71");
                 event.preventDefault();
                 if (isLoading) return;
+                console.log("Line 74");
 
                 isLoading = true;
                 const requestData = $(this).serialize();
+                console.log("Line 78");
 
                 // Show loading state on the button
                 const searchButton = document.getElementById('searchButton');
