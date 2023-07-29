@@ -16,7 +16,7 @@ def scrapeData(budget_request) :
         options.add_argument("disable-dev-shm-usage")
 
         chromedriver_autoinstaller.install()  
-        driver  = webdriver.Chrome(options=options, executable_path=ChromeDriverManager().install())
+        driver  = webdriver.Chrome(options=options, service=ChromeDriverManager().install())
         # driver  = webdriver.Chrome(options=options)
         driver.get(url)
 
