@@ -9,7 +9,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 def scrapeData(budget_request) :
         options = webdriver.ChromeOptions()
-
         url = "https://www.billhighway.com/aph/forChapters/v2/login.aspx?logoff=timeout"
         # options= webdriver.ChromeOptions()
         options.add_argument("headless")
@@ -17,9 +16,7 @@ def scrapeData(budget_request) :
         options.add_argument("disable-dev-shm-usage")
 
         chromedriver_autoinstaller.install()  
-        driver  = webdriver.Chrome(
-    chrome_options=options, executable_path=ChromeDriverManager().install()
-)
+        driver  = webdriver.Chrome(options=options, executable_path=ChromeDriverManager().install())
         # driver  = webdriver.Chrome(options=options)
         driver.get(url)
 
