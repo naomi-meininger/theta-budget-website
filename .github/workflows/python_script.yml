@@ -17,7 +17,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.0' # Use the appropriate Python version you want to use, e.g., '3.x', '3.7', '3.8', etc.
+          python-version: '3.12.0-beta.4' # Use the appropriate Python version you want to use, e.g., '3.x', '3.7', '3.8', etc.
 
       # - name: Install dependencies
       #   run: pip install -r requirements.txt # Add this line if you have any Python dependencies
