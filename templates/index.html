@@ -81,6 +81,7 @@
                 const searchButton = document.getElementById('searchButton');
                 searchButton.value = 'Loading...';
                 searchButton.disabled = true;
+                console.log("Line 84");
 
                 $.ajax({
                     url: '/find-info/',
@@ -103,6 +104,8 @@
             });
 
             function displayData(data) {
+                                   console.log("Line 107");
+
                 const resultList = document.getElementById('list-returned');
                 const table_row = document.createElement('tr')
                 resultList.appendChild(table_row);
