@@ -8,16 +8,16 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 def scrapeData(budget_request) :
-        options = webdriver.ChromeOptions()
         url = "https://www.billhighway.com/aph/forChapters/v2/login.aspx?logoff=timeout"
-        # options= webdriver.ChromeOptions()
+        
+        options = webdriver.ChromeOptions()
         options.add_argument("headless")
         options.add_argument("window-size=1920x1480")
         options.add_argument("disable-dev-shm-usage")
-
+        
+        service = Service(executable_path=ChromeDriverManager().install())
         chromedriver_autoinstaller.install()  
-        driver  = webdriver.Chrome(options=options, service=ChromeDriverManager().install())
-        # driver  = webdriver.Chrome(options=options)
+        driver  = webdriver.Chrome(options=options, service=service)
         driver.get(url)
 
         login(driver)
