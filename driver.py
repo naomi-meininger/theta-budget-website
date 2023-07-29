@@ -17,5 +17,5 @@ def get_info():
   return jsonify(scraping.scrapeData(search_param))
 
 if __name__ == '__main__':
-  port = int(os.environ.get("PORT", 5000))
+  port = int(os.environ.get("PORT", 1024))
   app.run(host="0.0.0.0", port=port)
