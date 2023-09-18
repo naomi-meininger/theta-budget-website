@@ -32,10 +32,12 @@ def scrapeData(budget_request) :
                     
 
         driver.get("https://www.billhighway.com/aph/forChapters/budgetVariance.aspx")
+        print("on budget variance page")
         time.sleep(5)
         submit = driver.find_elements(By.CLASS_NAME, "RadButton")
         submit[0].click()
-        time.sleep(3)
+        print("get budget")
+        time.sleep(20)
 
 
        
