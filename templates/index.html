@@ -18,7 +18,7 @@
     <h3>Search for Different Budget Requests using the search button below</h3>
     <form id="search-form">
         <label for="dropdown" >Request:</label>
-        <select name="request" id="dropdown">
+        <select name="request" id="dropdown" value="">
             <option value="Vice+President+External+Affairs">Vice President External Affairs</option>
             <option value="Human+Resources+Director">Human Resources Director</option>
             <option value="Senior+Service">Senior Service</option>
@@ -49,34 +49,39 @@
                 </tr>
         </table>
     </div>
+       <br>
+       <div class=image-container>
+               <img src="{{ url_for('static', filename='images-and-style/thetagirls.png') }}" alt="Theta Sister Circa 2022" width="550" height="450">
+              <img src="{{ url_for('static', filename='images-and-style/theta2.jpg') }}" alt="Theta Sister Circa 2022" width="570" height="450">
+       </div>
+      
 
-    <!-- <img src="images-and-style/thetagirls.png" alt="Theta Sister Circa 2022" width="550" height="450">
-    <img src="images-and-style/theta2.jpg" alt="Theta Sister Circa 2022" width="570" height="450">
-    <img src="images-and-style/theta3.jpg" alt="Theta Sister Circa 2022" width="570" height="450"> -->
 
     <script>
 
         document.getElementById("dropdown").onchange = function() {
             // Get the selected value from the dropdown
             const selectedValue = this.value;
-
-            // Display the selected value in the result div
-        //     document.getElementById("input-box").innerText = "Selected value: " + selectedValue;
+           let drop = document.getElementById("dropdown");
+           drop.setAttribute("value", selectedValue);
         };
         let isLoading = false;
         $(document).ready(function () {
             $('#search-form').on('submit', function (event) {
-                
+                console.log("Line 71");
                 event.preventDefault();
                 if (isLoading) return;
+                console.log("Line 74");
 
                 isLoading = true;
                 const requestData = $(this).serialize();
+                console.log("Line 78");
 
                 // Show loading state on the button
                 const searchButton = document.getElementById('searchButton');
                 searchButton.value = 'Loading...';
                 searchButton.disabled = true;
+                console.log("Line 84");
 
                 $.ajax({
                     url: '/find-info/',
@@ -99,6 +104,8 @@
             });
 
             function displayData(data) {
+                                   console.log("Line 107");
+
                 const resultList = document.getElementById('list-returned');
                 const table_row = document.createElement('tr')
                 resultList.appendChild(table_row);
@@ -134,6 +141,11 @@
         }
     </script>
      <style>
+            .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
         header {
 background-color: black;
 

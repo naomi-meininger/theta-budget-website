@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, render_template, request
 import scraping
+import os
 app = Flask(__name__)
 
 @app.route('/')
@@ -16,4 +17,5 @@ def get_info():
   return jsonify(scraping.scrapeData(search_param))
 
 if __name__ == '__main__':
-  app.run(debug=True)
+  port = int(os.environ.get("PORT", 1024))
+  app.run(host="0.0.0.0", port=port)
